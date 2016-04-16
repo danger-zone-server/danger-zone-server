@@ -1,12 +1,12 @@
 const gulp = require('gulp');
 const eslint = require('gulp-eslint');
 const mocha = require('gulp-mocha');
-const gutil = require('gulp-util');
-var files = ['**', '**/*']
+// const gutil = require('gulp-util');
+var files = ['index.js', 'gulpfile.js', './lib/**/*.js'];
+
 gulp.task('mocha', () => {
-  return gulp.src(['test/*.js'], { read: false })
-  .pipe(mocha({ reporter: 'nyan'}))
-  .on('error', gutil.log);
+  return gulp.src('test/*.js')
+  .pipe(mocha());
 });
 
 gulp.task('watch-mocha', () => {
