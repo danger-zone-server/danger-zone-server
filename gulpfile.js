@@ -19,4 +19,13 @@ gulp.task('lint', () => {
   .pipe(eslint.format());
 });
 
-gulp.task('default', ['lint', 'watch-mocha']);
+gulp.task('lint:test', () => {
+  return gulp.src('./test/**/*test.js')
+  .pipe(mocha())
+  .pipe(eslint())
+  .pipe(eslint.format());
+});
+
+
+gulp.task('default', ['lint', 'watch-mocha', 'lint:test']);
+gulp.watch(files, ['lint']);
