@@ -1,0 +1,26 @@
+{
+  "name": "danger-zone-server",
+  "version": "1.0.0",
+  "description": "A framework to simplify setup of a http server",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jimmynono/DCC-Form.git"
+  },
+  "keywords": [
+    "server",
+    "http"
+  ],
+  "author": "James Norton <mrjamesnorton@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jimmynono/DCC-Form/issues"
+  },
+  "homepage": "https://github.com/jimmynono/DCC-Form#readme"
+}
