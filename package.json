@@ -11,13 +11,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jimmynono/DCC-Form.git"
+    "url": "https://github.com/danger-zone-server/danger-zone-server"
   },
   "keywords": [
     "server",
     "http"
   ],
-  "author": "James Norton <mrjamesnorton@gmail.com>", "Gene Troy <genetroy@hotmail.com>",
+  "author": "James Norton <mrjamesnorton@gmail.com>, Gene Troy <genetroy@hotmail.com>, Brandon Parker <https://github.com/Brandon-Parker>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jimmynono/DCC-Form/issues"
