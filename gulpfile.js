@@ -5,12 +5,12 @@ const mocha = require('gulp-mocha');
 var files = ['index.js', 'gulpfile.js', './lib/**/*.js'];
 
 gulp.task('mocha', () => {
-  return gulp.src('test/*.js')
+  return gulp.src('test/**/*.js')
   .pipe(mocha());
 });
 
 gulp.task('watch-mocha', () => {
-  gulp.watch(['lib/**', 'test/**'], ['mocha']);
+  gulp.watch(['lib/**/*.JS', 'test/**/*.JS'], ['mocha']);
 });
 
 gulp.task('lint', () => {
