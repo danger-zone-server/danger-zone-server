@@ -12,7 +12,7 @@ describe('headMessage tests'), () => {
     this.server = require(__dirname + 'headMessageTestServer'); // I need to create this
     done();
   });
-  after(function(done) {
+  afterEach(function(done) {
     this.server.close();
   });
 
