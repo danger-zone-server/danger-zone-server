@@ -10,11 +10,17 @@ DZS is a basic framework for creating an HTTP server with routes, to keep you ou
 
 ##Installation
 
+Initialize your repository.
 ```
-npm install danger-zone-server
+npm init
+```
+Then do:
+
+```
+npm install --save-dev danger-zone-server
 ```
 
-after install ing danger-zone-server the user must then download all dev Dependencies
+after installing danger-zone-server the user must then download all dev Dependencies
 
 ```
 npm install
@@ -22,9 +28,9 @@ npm install
 
 ##Getting Started
 
-DZS consists of an HTTP router and helpful methods that streamline writing response headers and expand options for writing data to a new file. Here is the simplest way to implement it:
+DZS consists of an HTTP router and helpful methods that streamline writing response headers. Here is the simplest way to implement it:
 
-To use Danger Zone Server, the user must require in the package, via npm.js.com.
+To use Danger Zone Server, the user must require in the package in your route project directory.
 
 ```
 var dzs = require('danger-zone-server');
