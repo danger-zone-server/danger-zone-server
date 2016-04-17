@@ -2,17 +2,24 @@
 
 DZS is a basic framework for creating an HTTP server with routes, to keep you out of the Danger Zone.  It allows you to easily write files and header messages upon request. Danger Zone Server also implements the following REST requests:
 
-GET
-POST
-PUT
-PATCH
-DELETE
+* GET
+* POST
+* PUT
+* PATCH
+* DELETE
 
 ##Installation
 
 ```
 npm install danger-zone-server
 ```
+
+after install ing danger-zone-server the user must then download all dev Dependencies
+
+```
+npm install
+```
+
 ##Getting Started
 
 DZS consists of an HTTP router and helpful methods that streamline writing response headers and expand options for writing data to a new file. Here is the simplest way to implement it:
