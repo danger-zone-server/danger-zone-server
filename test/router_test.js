@@ -1,39 +1,30 @@
 const request = require('superagent');
 const chai = require('chai');
 const expect = chai.expect;
+require('chai-http');
 
-describe('data store ', () => {
-  it('should respond to GET requests', (done) => {
+describe('The router ', () => {
+  it('Should create a router object with routes when the constructor method is called.', (done) => {
+      request
+        .get('localhost:8888/')
+        .end((err, res) => {
+          expect(err).to.eql('undefined');
+          // because linter doesn't like .to.exist
+          expect(res).to.not.eql('undefined');
+          expect(res.status).to.eql(200);
+        });
+      done();
+    });
+  it('Should 404 when url does not exist.', (done) => {
     request
-      .get('localhost:3030/awesomeUrl')
+      .get('localhost:8888/towerFlyby')
       .end((err, res) => {
         expect(err).to.eql('undefined');
-        // because linter doesn't like .to.exist
-        expect(res).to.not.eql('undefined' || 'null');
-        expect(res.status).to.eql(200);
-      });
-    done();
-  });
-  it('should also take a POST request', (done) => {
-    request
-      .post('localhost:3030/awesomeUrl')
-      .set('Content-Type', 'application/json')
-      .send('{"there": "can be only one"}')
-      .end((err, res) => {
-        expect(err).to.eql('undefined');
-        expect(res).to.not.eql('undefined' || 'null');
-        expect(res.status).to.eql(200);
+        expect(res.status).to.eql(404);
+        if (err && err.status === 404) {
+          process.stdout.write('Negative Ghostrider... ' + res.body.message);
+        }
       });
     done();
   });
 });
-//  require chai, chai-http, fs at least
-// possible tests
-describe('The router ', () => {
-  it('Should create a router object with routes when the constructor method is called.', (done) => {
-    request
-
-  })
-  it('Should define a callback function for an http GET (POST, PUT, PATCH, DELETE) request and url that returns an expected value.')
-  it('Should 404 when a server using the Router object is requested a url which does not exist.')
-})
