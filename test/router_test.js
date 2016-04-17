@@ -14,18 +14,17 @@ describe('The router ', () => {
           expect(res.status).to.eql(200);
         });
       done();
-    })
-    // it('Should define a callback function for an http GET (POST, PUT, PATCH, DELETE) request and url that returns an expected value.'){
-  it('Should 404 when a server using the Router object is requested a url which does not exist.', (done) => {
+    });
+  it('Should 404 when url does not exist.', (done) => {
     request
       .get('localhost:8888/towerFlyby')
       .end((err, res) => {
         expect(err).to.eql('undefined');
         expect(res.status).to.eql(404);
-        if(err && err.status === 404){
+        if (err && err.status === 404) {
           process.stdout.write('Negative Ghostrider... ' + res.body.message);
         }
       });
     done();
-  })
+  });
 });
