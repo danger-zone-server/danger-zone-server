@@ -1,7 +1,6 @@
 const gulp = require('gulp');
 const eslint = require('gulp-eslint');
 const mocha = require('gulp-mocha');
-// const gutil = require('gulp-util');
 var files = ['index.js', 'gulpfile.js', './lib/**/*.js'];
 
 gulp.task('mocha', () => {
@@ -25,7 +24,6 @@ gulp.task('lint:test', () => {
   .pipe(eslint())
   .pipe(eslint.format());
 });
-
 
 gulp.task('default', ['lint', 'watch-mocha', 'lint:test']);
 gulp.watch(files, ['lint']);

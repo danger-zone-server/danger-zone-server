@@ -4,20 +4,11 @@ chai.use(chaiHttp);
 const expect = chai.expect;
 const request = chai.request;
 
-// const fs = require('fs');
-
-// dont forget, headMessage takes 4 parameters
-// also, we want to open and close the server for each test
-// instead of creating a test server within the test, it's created in its own file and required in
 describe('headMessage tests', () => {
   beforeEach(function(done) {
-    this.server = require(__dirname + '/headMessageTestServer');
+    this.server = require(__dirname + '/headMessageTestServer_test');
     done();
   });
-  // afterEach(function(done) {
-  //   this.server.close();
-  //   done();
-  // });
   it('Should return a response in plain text.', (done) => {
     request('localhost:8888')
     .get('/textplaintest')
@@ -44,7 +35,7 @@ describe('headMessage tests', () => {
     .end((err, res) => {
       expect(err).to.not.eql(null);
       expect(res.status).to.eql(404);
-      expect(res.text).to.eql('You\'ve lost that lovin\' feelin\'');
+      expect(res.text).to.eql('You\'ve lost that lovin\' feelin\'\n');
       done();
     });
   });

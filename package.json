@@ -1,6 +1,6 @@
 {
   "name": "danger-zone-server",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A framework to simplify setup of a http server",
   "main": "index.js",
   "directories": {
@@ -18,11 +18,11 @@
     "http"
   ],
   "author": "James Norton <mrjamesnorton@gmail.com>, Gene Troy <genetroy@hotmail.com>, Brandon Parker <https://github.com/Brandon-Parker>, Kristopher Skelton <kristopher@kmskelton.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/danger-zone-server/danger-zone-server"
   },
-  "homepage": "https://github.com/danger-zone-server/danger-zone-server",
+  "homepage": "https://www.npmjs.com/package/danger-zone-server",
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-http": "^2.0.1",
