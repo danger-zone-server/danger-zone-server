@@ -34,6 +34,7 @@ To use Danger Zone Server, the user must require in the package in your route pr
 
 ```
 var dzs = require('danger-zone-server');
+var router = new dzs.Router();
 ```
 
 ##Custom Routes
@@ -49,8 +50,10 @@ router.method(path, (req, res) => {
 For example, a GET request to /maverick would look like
 
 ```
-router.get('/maverick', (req, res) => {
-  headMessage(res, 200, 'text/plain', 'you can be my wingman anytime');
-  return res.end()
-})
+router.get('/goose', function(req, res) {
+  dzs.headMessage(res, '200', 'text/plain', 'I feel the need...the need for speeeeeed')
+  return res.end();
+  });
+
+  const server = dzs.server(router.route());
 ```
