@@ -1,6 +1,6 @@
 {
   "name": "danger-zone-server",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A framework to simplify setup of a http server",
   "main": "index.js",
   "directories": {
@@ -17,10 +17,19 @@
     "server",
     "http"
   ],
-  "author": "James Norton <mrjamesnorton@gmail.com>, Gene Troy <genetroy@hotmail.com>, Brandon Parker <https://github.com/Brandon-Parker>",
-  "license": "ISC",
+  "author": "James Norton <mrjamesnorton@gmail.com>, Gene Troy <genetroy@hotmail.com>, Brandon Parker <https://github.com/Brandon-Parker>, Kristopher Skelton <kristopher@kmskelton.com>",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jimmynono/DCC-Form/issues"
+    "url": "https://github.com/danger-zone-server/danger-zone-server"
   },
-  "homepage": "https://github.com/jimmynono/DCC-Form#readme"
+  "homepage": "https://www.npmjs.com/package/danger-zone-server",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^2.0.0",
+    "gulp-mocha": "^2.2.0",
+    "mocha": "^2.4.5",
+    "superagent": "^1.8.3"
+  }
 }

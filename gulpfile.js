@@ -1,16 +1,15 @@
 const gulp = require('gulp');
 const eslint = require('gulp-eslint');
 const mocha = require('gulp-mocha');
-const gutil = require('gulp-util');
-var files = ['**', '**/*']
+var files = ['index.js', 'gulpfile.js', './lib/**/*.js'];
+
 gulp.task('mocha', () => {
-  return gulp.src(['test/*.js'], { read: false })
-  .pipe(mocha({ reporter: 'nyan'}))
-  .on('error', gutil.log);
+  return gulp.src('test/**/*test.js')
+  .pipe(mocha());
 });
 
 gulp.task('watch-mocha', () => {
-  gulp.watch(['lib/**', 'test/**'], ['mocha']);
+  gulp.watch(['lib/**/*.js', 'test/**/*test.js'], ['mocha']);
 });
 
 gulp.task('lint', () => {
@@ -19,4 +18,12 @@ gulp.task('lint', () => {
   .pipe(eslint.format());
 });
 
-gulp.task('default', ['lint', 'watch-mocha']);
+gulp.task('lint:test', () => {
+  return gulp.src('./test/**/*test.js')
+  .pipe(mocha())
+  .pipe(eslint())
+  .pipe(eslint.format());
+});
+
+gulp.task('default', ['lint', 'watch-mocha', 'lint:test']);
+gulp.watch(files, ['lint']);
