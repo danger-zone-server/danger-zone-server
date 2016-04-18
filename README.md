@@ -35,6 +35,8 @@ To use Danger Zone Server, the user must require in the package in your route pr
 ```
 var dzs = require('danger-zone-server');
 var router = new dzs.Router();
+
+const server = dzs.server(router.route());
 ```
 
 ##Custom Routes
@@ -50,10 +52,32 @@ router.method(path, (req, res) => {
 For example, a GET request to /maverick would look like
 
 ```
-router.get('/goose', function(req, res) {
-  dzs.headMessage(res, '200', 'text/plain', 'I feel the need...the need for speeeeeed')
+router.get('/maverick', function(req, res) {
+  dzs.headMessage(res, '200', 'text/plain', 'I feel the need...the need for speed');
   return res.end();
   });
-
-  const server = dzs.server(router.route());
 ```
+
+For example, a POST request to /goose would look like
+
+```
+router.post('/iceman', function(req, res) {
+  dzs.headMessage(res, '200', 'text/plain', 'You can be my wing man anytime!');
+  return res.end();
+});
+```
+
+##Custom Ports
+The package allows the user to choose the local port that their server runs on. By default the local port will be 8888, if the user desires a different local port number they add it in as a command line argument.
+
+```
+node index.js [port]
+```
+
+for example
+
+```
+node index.js 3333
+```
+
+Would set the local port to 3333;
