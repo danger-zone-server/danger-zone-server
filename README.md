@@ -40,7 +40,7 @@ var dzs = require('danger-zone-server');
 The package simplifies route header generation by simply putting into the server code the path and the messages you need generated.
 
 ```
-router.method(path, () => {
+router.method(path, (req, res) => {
   headMessage(res, status, contentType, bodyMsg );
   return res.end();
 });
@@ -49,8 +49,8 @@ router.method(path, () => {
 For example, a GET request to /maverick would look like
 
 ```
-router.get('/maverick', () => {
-  headMessage(res, 200, 'text/plain', 'I feel the need...the need for speed')
-  return res.end();
-});
+router.get('/maverick', (req, res) => {
+  headMessage(res, 200, 'text/plain', 'you can be my wingman anytime');
+  return res.end()
+})
 ```
