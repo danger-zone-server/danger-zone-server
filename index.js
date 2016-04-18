@@ -12,7 +12,7 @@ exports.server = require('http').createServer(router.route()).listen(8888, () =>
 exports.Router = require(__dirname + '/lib/router.js');
 exports.headMessage = require(__dirname + '/lib/headMessage.js');
 
-router.post('/maverick', function(req, res) {
-  headMessage(res, 200, 'text/plain', 'yessir\n');
+router.get('/maverick', function(req, res) {
+  headMessage(res, 200, 'text/plain', 'bonjour\n');
   return res.end()
 })
