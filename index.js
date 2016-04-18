@@ -1,10 +1,12 @@
-// Set port to default or the user inputed number
-process.argv[2] = 8888;
-
 // Require server and launch
+var PORT = 8888;
+if (process.argv[2]) {
+  PORT = process.argv[2]
+}
+
 exports.server = function(routerCall) {
-    require('http').createServer(routerCall).listen(process.argv[2], () => {
-    console.log('Server requesting flyby on Port: ' + process.argv[2]);
+    require('http').createServer(routerCall).listen(PORT, () => {
+    console.log('Server requesting flyby on Port: ' + PORT);
   });
 };
 
