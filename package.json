@@ -17,10 +17,10 @@
     "server",
     "http"
   ],
-  "author": "James Norton <mrjamesnorton@gmail.com>, Gene Troy <genetroy@hotmail.com>, Brandon Parker <https://github.com/Brandon-Parker>",
+  "author": "James Norton <mrjamesnorton@gmail.com>, Gene Troy <genetroy@hotmail.com>, Brandon Parker <https://github.com/Brandon-Parker>, Kristopher Skelton <kristopher@kmskelton.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jimmynono/DCC-Form/issues"
+    "url": "https://github.com/danger-zone-server/danger-zone-server"
   },
   "homepage": "https://github.com/danger-zone-server/danger-zone-server",
   "devDependencies": {
