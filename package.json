@@ -1,6 +1,6 @@
 {
   "name": "danger-zone-server",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "A framework to simplify setup of a http server",
   "main": "index.js",
   "directories": {
