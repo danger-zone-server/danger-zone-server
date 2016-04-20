@@ -1,7 +1,7 @@
 // Require server and launch
-var PORT = 8888;
+var PORT = 3000;
 if (process.argv[2]) {
-  PORT = process.argv[2]
+  PORT = process.argv[2];
 }
 
 exports.server = function(routerCall) {

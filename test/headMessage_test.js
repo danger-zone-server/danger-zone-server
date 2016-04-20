@@ -1,37 +1,34 @@
+const request = require('superagent');
 const chai = require('chai');
-const chaiHttp = require('chai-http');
-chai.use(chaiHttp);
 const expect = chai.expect;
-const request = chai.request;
+require('./test_server.js');
 
 describe('headMessage tests', () => {
-  beforeEach(function(done) {
-    this.server = require(__dirname + '/headMessageTestServer_test');
-    done();
-  });
   it('Should return a response in plain text.', (done) => {
-    request('localhost:8888')
-    .get('/textplaintest')
+    request
+    .get('localhost:8989/goodroute')
     .end((err, res) => {
       expect(err).to.eql(null);
       expect(res.status).to.eql(200);
-      expect(res.text).to.eql('this here\'s some plain text ');
+      expect(res.text).to.eql('I feel the need...the need for speed');
       done();
     });
   });
   it('Should return a response in JSON.', (done) => {
-    request('localhost:8888')
-    .get('/applicationjsontest')
+    request
+    .post('localhost:8989/goodbase')
+    .set('Content-Type', 'application/json')
+    .send('{"callsign": "Viper"}')
     .end((err, res) => {
       expect(err).to.eql(null);
       expect(res.status).to.eql(200);
-      expect(res.text).to.eql('{"msg":"y\'all got some bodacious parsed json"}');
+      expect(res.text).to.eql('{"callsign": "Viper"}');
       done();
     });
   });
   it('Should return a 404 response in plain text.', (done) => {
-    request('localhost:8888')
-    .get('/nosuchendpoint')
+    request
+    .get('localhost:8989/nosuchendpoint')
     .end((err, res) => {
       expect(err).to.not.eql(null);
       expect(res.status).to.eql(404);

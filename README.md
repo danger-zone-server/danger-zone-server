@@ -68,7 +68,7 @@ router.post('/iceman', function(req, res) {
 ```
 
 ##Custom Ports
-The package allows the user to choose the local port that their server runs on. By default the local port will be 8888, if the user desires a different local port number they add it in as a command line argument.
+The package allows the user to choose the local port that their server runs on. By default the local port will be 3000, if the user desires a different local port number they add it in as a command line argument.
 
 ```
 node index.js [port]
