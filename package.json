@@ -1,13 +1,13 @@
 {
   "name": "danger-zone-server",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "A framework to simplify setup of a http server",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/mocha/bin/mocha test"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,25 @@
     "server",
     "http"
   ],
-  "author": "James Norton <mrjamesnorton@gmail.com>, Gene Troy <genetroy@hotmail.com>, Brandon Parker <https://github.com/Brandon-Parker>, Kristopher Skelton <kristopher@kmskelton.com>",
+  "author": {
+    "name": "James Norton",
+    "email": "mrjamesnorton@gmail.com"
+  },
+  "contributors": [
+    {
+      "name": "Brandon Parker",
+      "email": "https://github.com/Brandon-Parker"
+    },
+    {
+      "name": "Kristopher Skelton",
+      "email": "hkristopher@kmskelton.com"
+    },
+    {
+      "name": "Gene Troy",
+      "email": "genetroy@hotmail.com"
+    }
+
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/danger-zone-server/danger-zone-server"

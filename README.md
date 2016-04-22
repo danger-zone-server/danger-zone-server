@@ -4,6 +4,9 @@ DZS is a basic framework for creating an HTTP server with routes, to keep you ou
 
 * GET
 * POST
+
+Potential future updates will include
+
 * PUT
 * PATCH
 * DELETE
@@ -12,29 +15,29 @@ DZS is a basic framework for creating an HTTP server with routes, to keep you ou
 
 Initialize your repository.
 ```
-npm init
+$ npm init
 ```
 Then do:
 
 ```
-npm install --save-dev danger-zone-server
+$ npm install --save-dev danger-zone-server
 ```
 
 after installing danger-zone-server the user must then download all dev Dependencies
 
 ```
-npm install
+$ npm install
 ```
 
 ##Getting Started
 
 DZS consists of an HTTP router and helpful methods that streamline writing response headers. Here is the simplest way to implement it:
 
-To use Danger Zone Server, the user must require in the package in your route project directory.
+To use Danger Zone Server, the user must require in the package in your route project directory to a file of your choice, for example `yourfile.js`.
 
 ```
-var dzs = require('danger-zone-server');
-var router = new dzs.Router();
+const dzs = require('danger-zone-server');
+const router = new dzs.Router();
 
 const server = dzs.server(router.route());
 ```
@@ -44,7 +47,7 @@ The package simplifies route header generation by simply putting into the server
 
 ```
 router.method(path, (req, res) => {
-  headMessage(res, status, contentType, bodyMsg );
+  dzs.headMessage(res, status, contentType, bodyMsg );
   return res.end();
 });
 ```
@@ -68,16 +71,16 @@ router.post('/iceman', function(req, res) {
 ```
 
 ##Custom Ports
-The package allows the user to choose the local port that their server runs on. By default the local port will be 8888, if the user desires a different local port number they add it in as a command line argument.
+The package allows the user to choose the local port that their server runs on. By default the local port will be 3000, if the user desires a different local port number they add it in as a command line argument.
 
 ```
-node index.js [port]
+$ node yourFile.js [port]
 ```
 
 for example
 
 ```
-node index.js 3333
+$ node index.js 3333
 ```
 
 Would set the local port to 3333;
